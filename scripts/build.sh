@@ -28,6 +28,8 @@ cp /tmp/menuselect.makeopts /tmp/asterisk/menuselect.makeopts
 ./configure CFLAGS='-g -O2 -mtune=native' --libdir=/usr/lib/x86_64-linux-gnu
 make && make install && make samples
 
+touch /var/log/auth.log
+
 # clean
 apt-get install $minimal_apt_get_args $RUN_PACKAGES
 
