@@ -28,6 +28,10 @@ cp /tmp/menuselect.makeopts /tmp/asterisk/menuselect.makeopts
 ./configure CFLAGS='-g -O2 -mtune=native' --libdir=/usr/lib/x86_64-linux-gnu
 make && make install && make samples
 
+# add g729
+wget http://asterisk.hosting.lv/bin/codec_g729-ast130-gcc4-glibc-x86_64-pentium4.so codec_g729.so
+mv codec_g729.so /usr/lib/x86_64-linux-gnu/asterisk/modules/codec_g729.so
+
 touch /var/log/auth.log
 
 # clean
