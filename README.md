@@ -1,3 +1,9 @@
+# docker-cert-asterisk13-ubuntu: Docker image
+[![](https://badge.imagelayers.io/cleardevice/docker-cert-asterisk13-ubuntu:latest.svg)](https://imagelayers.io/?images=cleardevice/docker-cert-asterisk13-ubuntu:latest 'Get your own badge on imagelayers.io')
+
+
+You can find this image on the docker hub at: https://hub.docker.com/r/cleardevice/docker-cert-asterisk13-ubuntu/
+
 ##### Docker image with Certified Asterisk 13 LTS version and Fail2ban on Ubuntu 64bits (14.04.2 LTS)
 
 This is the Docker Certified Asterisk 13.1-cert2 version on Ubuntu X86_64 with SIP and new PJSIP channels. Certified Asterisk 13 is the latest LTS version recommended for production systems with a release frequency of 2 - 4 times per year.
