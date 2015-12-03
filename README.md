@@ -8,8 +8,6 @@ You can find this image on the docker hub at: https://hub.docker.com/r/cleardevi
 
 This is the Docker Certified Asterisk 13.1-cert2 version on Ubuntu X86_64 with SIP and new PJSIP channels. Certified Asterisk 13 is the latest LTS version recommended for production systems with a release frequency of 2 - 4 times per year.
 
-Image size: 534.9 MB
-
 It includes:
 
 - Certified Asterisk 13.1-cert2
@@ -33,7 +31,7 @@ To execute it:
 
 Asterisk PBX needs to use a big range of ports, so it needs to be executed with docker version 1.5.0 or higher (available in docker ubuntu sources) for being able to launch the image specifying a range of ports. For example:
 
-`# docker run --restart=always --name asterisk01 -d -p 5060-5065:5060-5065/tcp -p 10000-10500:10000-10500/udp cleardevice/docker-cert-asterisk13-ubuntu`
+`# docker run --restart=always --privileged --name asterisk01 -d -p 5060-5065:5060-5065/tcp -p 10000-10500:10000-10500/udp cleardevice/docker-cert-asterisk13-ubuntu`
 
 and connect to asterisk CLI with:
 
