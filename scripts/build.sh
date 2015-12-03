@@ -2,8 +2,8 @@
 
 minimal_apt_get_args='-y --no-install-recommends'
 
-SERVICE_PACKAGES="nano tar htop"
-BUILD_PACKAGES="wget subversion build-essential libncurses5-dev uuid-dev libjansson-dev libxml2-dev libgsm1-dev unixodbc-dev libspeex-dev libspeexdsp-dev libssl-dev libsqlite3-dev pkg-config"
+SERVICE_PACKAGES="nano tar htop libxml2-dev"
+BUILD_PACKAGES="wget subversion build-essential libncurses5-dev uuid-dev libjansson-dev libgsm1-dev unixodbc-dev libspeex-dev libspeexdsp-dev libssl-dev libsqlite3-dev pkg-config"
 RUN_PACKAGES="openssl sqlite3 fail2ban iptables"
 
 apt-get update -y
@@ -32,7 +32,7 @@ make && make install && make samples
 wget http://asterisk.hosting.lv/bin/codec_g729-ast130-gcc4-glibc-x86_64-pentium4.so -O codec_g729.so
 mv codec_g729.so /usr/lib/x86_64-linux-gnu/asterisk/modules/
 
-touch /var/log/auth.log
+touch /var/log/auth.log /var/log/asterisk/messages /var/log/asterisk/security
 
 # install run packages
 apt-get install $minimal_apt_get_args $RUN_PACKAGES
