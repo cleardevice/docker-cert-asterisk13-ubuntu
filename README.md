@@ -31,7 +31,7 @@ To execute it:
 
 Asterisk PBX needs to use a big range of ports, so it needs to be executed with docker version 1.5.0 or higher (available in docker ubuntu sources) for being able to launch the image specifying a range of ports. For example:
 
-`# docker run --restart=always --privileged --name asterisk01 -d -p 5060-5065:5060-5065/tcp -p 10000-10500:10000-10500/udp cleardevice/docker-cert-asterisk13-ubuntu`
+`# docker run --restart=always --privileged --name asterisk01 -d -p 5060:5060 -p 5060:5060/udp -p 10000-10500:10000-10500/udp -v <path to host folder with asterisk confings>:/etc/asterisk cleardevice/docker-cert-asterisk13-ubuntu`
 
 and connect to asterisk CLI with:
 
