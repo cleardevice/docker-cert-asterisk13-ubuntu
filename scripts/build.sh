@@ -2,12 +2,13 @@
 
 minimal_apt_get_args='-y --no-install-recommends'
 
-SERVICE_PACKAGES="nano tar htop libxml2-dev"
-BUILD_PACKAGES="wget subversion build-essential libncurses5-dev uuid-dev libjansson-dev libgsm1-dev unixodbc-dev libspeex-dev libspeexdsp-dev libssl-dev libsqlite3-dev pkg-config"
+SERVICE_PACKAGES="nano tar htop"
+LIBS_PACKAGES="libxml2-dev libjansson-dev libncurses5-dev libgsm1-dev libspeex-dev libspeexdsp-dev libssl-dev libsqlite3-dev"
+BUILD_PACKAGES="wget subversion build-essential uuid-dev unixodbc-dev pkg-config"
 RUN_PACKAGES="openssl sqlite3 fail2ban iptables"
 
 apt-get update -y
-apt-get install $minimal_apt_get_args $SERVICE_PACKAGES $BUILD_PACKAGES
+apt-get install $minimal_apt_get_args $SERVICE_PACKAGES $LIBS_PACKAGES $BUILD_PACKAGES
 
 # pjsip
 svn co http://svn.pjsip.org/repos/pjproject/trunk/ /tmp/pjproject-trunk
