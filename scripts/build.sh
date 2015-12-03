@@ -4,7 +4,7 @@ minimal_apt_get_args='-y --no-install-recommends'
 
 SERVICE_PACKAGES="nano tar htop"
 BUILD_PACKAGES="wget subversion build-essential libncurses5-dev uuid-dev libjansson-dev libxml2-dev libgsm1-dev unixodbc-dev libspeex-dev libspeexdsp-dev libssl-dev libsqlite3-dev pkg-config"
-RUN_PACKAGES="openssl sqlite3 fail2ban"
+RUN_PACKAGES="openssl sqlite3 fail2ban iptables"
 
 apt-get update -y
 apt-get install $minimal_apt_get_args $SERVICE_PACKAGES $BUILD_PACKAGES
@@ -33,6 +33,11 @@ wget http://asterisk.hosting.lv/bin/codec_g729-ast130-gcc4-glibc-x86_64-pentium4
 mv codec_g729.so /usr/lib/x86_64-linux-gnu/asterisk/modules/
 
 touch /var/log/auth.log
+
+# fail2ban
+rm /etc/fail2ban/filter.d/asterisk.conf
+cp /tmp/asterisk*.conf /etc/fail2ban/filter.d/
+cat /tmp/jail.conf >> /etc/fail2ban/jail.conf
 
 # clean
 apt-get install $minimal_apt_get_args $RUN_PACKAGES
