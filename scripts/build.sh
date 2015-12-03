@@ -35,6 +35,7 @@ mv codec_g729.so /usr/lib/x86_64-linux-gnu/asterisk/modules/
 touch /var/log/auth.log
 
 # fail2ban
+service fail2ban start
 rm /etc/fail2ban/filter.d/asterisk.conf
 cp /tmp/asterisk*.conf /etc/fail2ban/filter.d/
 cat /tmp/jail.conf >> /etc/fail2ban/jail.conf
