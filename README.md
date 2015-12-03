@@ -35,7 +35,7 @@ Asterisk PBX needs to use a big range of ports, so it needs to be executed with 
 
 and connect to asterisk CLI with:
 
-`# docker exec -t -i asterisk01 asterisk -rvvvvv`
+`# docker exec -it asterisk01 asterisk -rvvvvv`
 
 Notice:
 
@@ -45,6 +45,40 @@ Notice:
 # rtpstart=10000
 # rtpend=10500
 ```
+
+### Fail2ban ###
+
+To manage Fail2ban, login to asterisk container:
+
+`# docker exec -it asterisk01 bash`
+
+Check Fail2ban status:
+
+`# service fail2ban status`
+
+Check Fail2ban Asterisk rules:
+
+```
+# fail2ban-client status asterisk-iptables
+# fail2ban-client status asterisk-security-iptables
+```
+
+Show fail2ban iptables rules:
+
+`# iptables -nL fail2ban-ASTERISK`
+
+For example you can see:
+
+```
+Chain fail2ban-ASTERISK (1 references)
+target     prot opt source               destination
+REJECT     all  --  1.2.3.4              0.0.0.0/0            reject-with icmp-port-unreachable
+RETURN     all  --  0.0.0.0/0            0.0.0.0/0
+```
+
+To unblock IP address use:
+
+`# iptables -D fail2ban-ASTERISK -s 1.2.3.4 -j DROP`
 
 ### Thanks ###
 
