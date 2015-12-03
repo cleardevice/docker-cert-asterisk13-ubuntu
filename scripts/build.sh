@@ -43,6 +43,7 @@ cat /tmp/jail.conf >> /etc/fail2ban/jail.conf
 apt-get install $minimal_apt_get_args $RUN_PACKAGES
 
 apt-get remove --purge -y $BUILD_PACKAGES
+apt-get autoremove
 apt-get clean
 rm -rf /tmp/* /var/tmp/*
 rm -rf /var/lib/apt/lists/*
