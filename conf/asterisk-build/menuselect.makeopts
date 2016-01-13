@@ -1,7 +1,7 @@
 MENUSELECT_ADDONS=chan_mobile chan_ooh323 format_mp3 res_config_mysql app_mysql cdr_mysql 
 MENUSELECT_APPS=app_flash app_skel app_adsiprog app_alarmreceiver app_amd app_dahdiras app_dictate app_externalivr app_fax app_festival app_getcpeid app_ices app_image app_ivrdemo app_jack app_meetme app_minivm app_morsecode app_mp3 app_nbscat app_osplookup app_saycounted app_sms app_talkdetect app_test app_url app_waitforring app_waitforsilence app_zapateller app_setcallerid 
 MENUSELECT_BRIDGES=
-MENUSELECT_CDR=cdr_csv cdr_pgsql cdr_radius cdr_sqlite3_custom cdr_tds cdr_sqlite 
+MENUSELECT_CDR=cdr_pgsql cdr_radius cdr_sqlite3_custom cdr_tds cdr_sqlite 
 MENUSELECT_CEL=cel_pgsql cel_radius cel_sqlite3_custom cel_tds 
 MENUSELECT_CHANNELS=chan_dahdi chan_motif chan_alsa chan_console chan_mgcp chan_misdn chan_nbs chan_oss chan_phone chan_skinny chan_unistim chan_vpb 
 MENUSELECT_CODECS=codec_dahdi 
