@@ -17,11 +17,11 @@ cd /tmp/pjproject-trunk
 ./configure --libdir=/usr/lib/x86_64-linux-gnu --prefix=/usr --enable-shared --disable-sound --disable-resample --disable-video --disable-opencore-amr CFLAGS='-O2 -DNDEBUG'
 make dep && make && make install && ldconfig && ldconfig -p | grep pj
 
-# certified-asterisk-13.1-current
+# asterisk-certified-13.1-current.tar.gz
 cd /tmp
-wget http://downloads.asterisk.org/pub/telephony/certified-asterisk/certified-asterisk-13.1-current.tar.gz
+wget http://downloads.asterisk.org/pub/telephony/certified-asterisk/asterisk-certified-13.1-current.tar.gz
 mkdir asterisk
-tar -xzvf certified-asterisk-13.1-current.tar.gz -C asterisk/ --strip-components=1
+tar -xzvf asterisk-certified-13.1-current.tar.gz -C asterisk/ --strip-components=1
 
 cd /tmp/asterisk
 sh contrib/scripts/get_mp3_source.sh
