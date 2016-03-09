@@ -74,5 +74,4 @@ make && make install && make samples
 wget http://asterisk.hosting.lv/bin/codec_g729-ast130-gcc4-glibc-x86_64-pentium4.so -O codec_g729.so
 mv codec_g729.so /usr/lib/x86_64-linux-gnu/asterisk/modules/
 
-touch /var/log/auth.log /var/log/asterisk/messages /var/log/asterisk/security
-
+touch /var/log/auth.log /var/log/asterisk/messages /var/log/asterisk/security /var/log/asterisk/cdr-csv
