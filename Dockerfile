@@ -1,14 +1,17 @@
-# Version: 0.0.4 - Certified Asterisk 13.1-cert2 with sip and pjsip channels
+# Version: 0.0.1 - Asterisk 13.7.2 with pjsip 2.4.5
 FROM ubuntu:trusty
 MAINTAINER cd "cleardevice@gmail.com"
 
-COPY ./scripts/build.sh /tmp/
-COPY ./conf/asterisk-build/menuselect.makeopts /tmp/
-COPY ./conf/fail2ban/filter.d/asterisk*.conf /tmp/
-COPY ./conf/fail2ban/jail.conf /tmp/
-COPY ./scripts/start.sh /
+ENV ASTERISK_VERSION=13.7.2
+ENV PJSIP_VERSION=2.4.5
 
-RUN /bin/sh /tmp/build.sh
+ADD ./conf /tmp
+ADD ./scripts /
 
-WORKDIR /root
+RUN /bin/sh /build-init.sh
+RUN /bin/sh /build-pjsip.sh
+RUN /bin/sh /build-asterisk.sh
+RUN /bin/sh /build-final.sh
+
+WORKDIR /etc/asterisk
 CMD ["/bin/sh", "/start.sh"]
